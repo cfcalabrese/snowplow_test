@@ -45,7 +45,7 @@ popularity_rankings as
 select 
 	film_title,
 	category_name,
-	ranking2 
+	ranking
 from 
 	popularity_rankings 
 where 
