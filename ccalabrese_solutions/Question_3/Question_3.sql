@@ -4,6 +4,17 @@
 --customer_film_preferences
 --customer_movies_seen
 --popularity_rankings_by_category
+drop table if exists public.film_recommendations;
+
+create table public.film_recommendations (
+	customer_id int4 NULL,
+	film_title varchar(255) NULL,
+	category varchar(25) NULL,
+	recommendation_ranking int8 null,
+	CONSTRAINT customer_recc_pkey PRIMARY KEY (customer_id, recommendation_ranking)
+);
+
+insert into public.film_recommendations(customer_id, film_title, category, recommendation_ranking)
 with recs as (
 	select 
 		prefs.customer_id, 
