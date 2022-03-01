@@ -83,10 +83,14 @@ inner join ids_to_update using
 	(customer_id)
 on conflict on constraint customer_id_inc_pkey do update
 set 
+	first_rental_date = excluded.first_rental_date,
+	first_film_rented = excluded.first_film_rented,
 	last_rental_date = excluded.last_rental_date,
 	last_film_rented = excluded.last_film_rented,
 	average_rental_interval = excluded.average_rental_interval,
 	total_revenue = excluded.total_revenue,
+	f30d_revenue = excluded.f30d_revenue,
+	value_tier_f30d = excluded.value_tier_f30d,
 	first_fav_actor = excluded.first_fav_actor,
 	second_fav_actor = excluded.second_fav_actor,
 	third_fav_actor = excluded.third_fav_actor
