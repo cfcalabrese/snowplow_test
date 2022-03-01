@@ -13,7 +13,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - $PWD/dvdrental:/dvdrental
+      - ./dvdrental:/dvdrental
       - pg_data:/var/lib/postgresql/data/
 
 volumes:
