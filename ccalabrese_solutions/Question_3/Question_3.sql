@@ -11,7 +11,7 @@ create table public.film_recommendations (
 	film_title varchar(255) not null,
 	category varchar(25) not null,
 	recommendation_ranking int8 not null,
-	CONSTRAINT customer_recc_pkey PRIMARY KEY (customer_id, recommendation_ranking)
+	constraint customer_recc_pkey primary key (customer_id, recommendation_ranking)
 );
 
 insert into public.film_recommendations(customer_id, film_title, category, recommendation_ranking)
