@@ -7,10 +7,10 @@
 drop table if exists public.film_recommendations;
 
 create table public.film_recommendations (
-	customer_id int4 NULL,
-	film_title varchar(255) NULL,
-	category varchar(25) NULL,
-	recommendation_ranking int8 null,
+	customer_id int4 not null,
+	film_title varchar(255) not null,
+	category varchar(25) not null,
+	recommendation_ranking int8 not null,
 	CONSTRAINT customer_recc_pkey PRIMARY KEY (customer_id, recommendation_ranking)
 );
 
