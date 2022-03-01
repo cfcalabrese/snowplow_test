@@ -33,9 +33,9 @@ insert into public.customer_lifecycle
 )
 select 
 	customer_id,
-	date_trunc('day', first_rental_date) as first_rental_date,
+	first_rental_date as first_rental_date,
 	rt.film_title as first_film_rented,
-	date_trunc('day', last_rental_date) as last_rental_date,
+	last_rental_date as last_rental_date,
 	rt2.film_title as last_film_rented,
 	cf.average_rental_interval,
 	cf.total_revenue,
