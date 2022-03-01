@@ -43,7 +43,7 @@ cust_val as (
 		sum(case when 
 				rental_date between first_rental_date and first_rental_date + interval '30 day'
 			then 
-				amount else null end) as f30d
+				amount else null end) as f30d_revenue
 	from
 		customer 
 	inner join rental using 
@@ -63,7 +63,8 @@ select
 	last_rental_id,
 	((last_rental_date - first_rental_date) / num_rentals) as average_rental_interval,
 	total_revenue,
-	(round(f30d, -1)/10) + 1 as value_tier
+	f30d_revenue,
+	(round(f30d_revenue, -1)/10) + 1 as value_tier_f30d
 from 
 	cust_first_rentals 
 inner join cust_last_rentals using 
