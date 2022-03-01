@@ -14,7 +14,13 @@ create table public.film_recommendations (
 	constraint customer_recc_pkey primary key (customer_id, recommendation_ranking)
 );
 
-insert into public.film_recommendations(customer_id, film_title, category, recommendation_ranking)
+insert into public.film_recommendations
+(
+	customer_id, 
+	film_title, 
+	category, 
+	recommendation_ranking
+)
 with recs as (
 	select 
 		prefs.customer_id, 
