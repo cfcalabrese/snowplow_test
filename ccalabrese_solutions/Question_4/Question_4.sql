@@ -12,7 +12,7 @@ create table public.customer_lifecycle (
 	value_tier_f30d numeric not null,
 	first_fav_actor text not null,
 	second_fav_actor text null,
-	third_fav_actor text null
+	third_fav_actor text null,
 	constraint customer_id_pkey primary key (customer_id)
 );
 
@@ -20,7 +20,8 @@ insert into public.customer_lifecycle
 (
 	customer_id, 
 	first_rental_date, 
-	first_film_rented, 
+	first_film_rented,
+	last_rental_date,
 	last_film_rented, 
 	average_rental_interval, 
 	total_revenue, 
